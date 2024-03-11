@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  {% for item in computer  %}
+
+  <div class="continer" >
+    <div class="card mt-5" style="background-color: rgb(151, 151, 151);">
+    <div class="row">
+     <div class="col-sm-3">
+       <img src="/static/image/{{item.image}}" class="card-img img-fluid ">
+     </div>
+     <div class="col-sm-6">
+       <ul class="list-unstyled text-start">
+        <li><h4 class="alert alert-secondary text-center">{{item.itemsid.name}}</h4></li>
+        <li><strong>{{item.price}}</strong></li>
+       </ul>
+        <a href="{% url 'detail' id=item.id %}"class="btn btn-dark ">Product Details </a> 
+     </div>
+    </div>
+   </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
